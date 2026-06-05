@@ -2,8 +2,8 @@ name: Daily Stock Analysis
 
 on:
   schedule:
-    # KST 09:30 (UTC 00:30) - 서버 지연 감안하여 30분 일찍 트리거
-    - cron: '30 0 * * 1-5'
+    # KST 10:00 = UTC 01:00 (GitHub cron은 UTC 고정)
+    - cron: '0 1 * * 1-5'
   workflow_dispatch:
 
 env:
