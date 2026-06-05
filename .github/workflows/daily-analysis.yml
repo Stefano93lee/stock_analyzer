@@ -5,12 +5,18 @@ on:
     - cron: '0 1 * * 1-5'
   workflow_dispatch:
 
+env:
+  TZ: Asia/Seoul
+
 jobs:
   analyze:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
+      - name: Check KST time
+        run: echo "Current KST time is $(date '+%Y-%m-%d %H:%M:%S %Z')"
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
